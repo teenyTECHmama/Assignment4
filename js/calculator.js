@@ -172,5 +172,8 @@ function operate(x, y, op) {
 }
 
 function roundAccurately(num, places) {
+    if (num.toString().includes('.')) {
+        return parseFloat(num.toFixed(4));
+      }
         return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
 }
